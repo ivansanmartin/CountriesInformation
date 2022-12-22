@@ -7,7 +7,7 @@ import json
 
 def on_click(event):
     search_entry.configure(state=NORMAL)
-    boton.configure(state=NORMAL)
+    boton.configure(state=NORMAL, bg="#ABEBC6")
     search_entry.delete(0, END)
 
 
@@ -51,96 +51,102 @@ def search(entry):
 
     elif entry in pais or entry in capital:
         print(all_info)
-        root.geometry("500x350")
-        frame = LabelFrame(root, text="INFORMACION ENCONTRADA", font=("Bahnschrift 15 italic bold"), bg=bg_global,
-                           fg="#AED6F1", relief=FLAT)
-        frame.grid(row=5, column=0, pady=10)
+        root.geometry("585x370")
+        sucess = Label(root, text=f"INFORMACION DE \"{entry.upper()}\'", font=("Bahnschrift 11 italic bold"), bg="#FCF3CF", fg="#5D6D7E")
+        sucess.grid(row=5, column=0, sticky=W+E)
+        frame = LabelFrame(root, font=("Bahnschrift 15 italic bold"), bg=bg_global,
+                           fg="#AED6F1", relief=FLAT, padx=110)
+        frame.grid(row=6, column=0, pady=25, sticky=W+E)
 
         # Etiqueta capital o nombre pais (viceversa)
         if entry in capital:
             pais_label = Label(frame, text="Pais: ", font=("Bahnschrift 13 italic bold"), bg=bg_global,
                                fg="#ABEBC6")
-            pais_label.grid(row=6, column=0, sticky=W)
+            pais_label.grid(row=7, column=0, sticky=W)
 
             # Etiqueta nombre pais
             pais_nombre = Label(frame, text=all_info[5], font=("Bahnschrift 13 italic bold"), fg="#FEF9E7",
                                 bg=bg_global)
-            pais_nombre.grid(row=6, column=1)
+            pais_nombre.grid(row=7, column=1)
         elif entry in pais:
             capital_label = Label(frame, text="Capital: ", font=("Bahnschrift 13 italic bold"), bg=bg_global,
                                   fg="#ABEBC6")
-            capital_label.grid(row=6, column=0, sticky=W)
+            capital_label.grid(row=8, column=0, sticky=W)
 
             # Etiqueta nombre pais
             capital_nombre = Label(frame, text=all_info[4], font=("Bahnschrift 13 italic bold"), fg="#FEF9E7",
                                    bg=bg_global)
-            capital_nombre.grid(row=6, column=1)
+            capital_nombre.grid(row=8, column=1)
 
         # Etiqueta poblacion cantidad
         population_label = Label(frame, text="Poblacion total: ", font=("Bahnschrift 13 italic bold"), bg=bg_global,
                                  fg="#ABEBC6")
-        population_label.grid(row=7, column=0, sticky=W)
+        population_label.grid(row=9, column=0, sticky=W)
 
         # POBLACION
         total_population = Label(frame, text=all_info[0], font=("Bahnschrift 13 italic bold"), fg="#FEF9E7",
                                  bg=bg_global)
-        total_population.grid(row=7, column=1)
+        total_population.grid(row=9, column=1)
 
         # Etiqueta continente
         continente_label = Label(frame, text="Continente: ", font=("Bahnschrift 13 italic bold"), bg=bg_global,
                                  fg="#ABEBC6")
-        continente_label.grid(row=8, column=0, sticky=W)
+        continente_label.grid(row=10, column=0, sticky=W)
 
         # CONTINENTE
         total_population = Label(frame, text=all_info[1], font=("Bahnschrift 13 italic bold"), fg="#FEF9E7",
                                  bg=bg_global)
-        total_population.grid(row=8, column=1)
+        total_population.grid(row=10, column=1)
 
         # Etiqueta codigo de moneda
         moneda_label = Label(frame, text="Codigo de monenda: ", font=("Bahnschrift 13 italic bold"), bg=bg_global,
                              fg="#ABEBC6")
-        moneda_label.grid(row=9, column=0, sticky=W)
+        moneda_label.grid(row=11, column=0, sticky=W)
 
         # TIPO MONEDA
         total_population = Label(frame, text=all_info[2], font=("Bahnschrift 13 italic bold"), fg="#FEF9E7",
                                  bg=bg_global)
-        total_population.grid(row=9, column=1)
+        total_population.grid(row=11, column=1)
 
         # Etiqueta codigo de pais
         moneda_label = Label(frame, text="Codigo de pais: ", font=("Bahnschrift 13 italic bold"), bg=bg_global,
                              fg="#ABEBC6")
-        moneda_label.grid(row=10, column=0, sticky=W)
+        moneda_label.grid(row=12, column=0, sticky=W)
 
         # CODIGO DE PAIS
         total_population = Label(frame, text=all_info[3], font=("Bahnschrift 13 italic bold"), fg="#FEF9E7",
                                  bg=bg_global)
-        total_population.grid(row=10, column=1)
+        total_population.grid(row=12, column=1)
 
 
-if __name__ == "__main__":
-    bg_global = "#34495E"
-    root = Tk()
-    root.geometry("500x300")
-    root.config(bg=bg_global)
-    root.eval('tk::PlaceWindow . center')
+bg_global = "#34495E"
 
-    # Etiqueta buscador informacion de paises.
-    search_text = Label(root, text='INFORMACION DE PAISES', font=("Bahnschrift 20 italic bold"), bg=bg_global,
-                        fg="#AED6F1")
-    search_text.grid(row=0, column=0, pady=10, padx=80)
+root = Tk()
+root.geometry("585x300")
+root.config(bg=bg_global)
+root.resizable(False, False)
+root.eval('tk::PlaceWindow . center')
 
-    # Entrada de buscador
+#Frame para busqueda
+frame_search = LabelFrame(root, text='INFORMACION DE PAISES', font=("Bahnschrift 20 italic bold"), bg=bg_global,
+                    fg="#AED6F1", relief=FLAT)
+frame_search.grid(row=0, column=0, pady=10, padx=130)
 
-    search_entry = Entry(root, bd=3, font=("Bahnschrift"), relief=SOLID, borderwidth=4, justify=CENTER, fg="#5D6D7E")
-    search_entry.grid(row=3, column=0, pady=10, padx=10, ipadx=20, ipady=4)
-    search_entry.insert(0, "Ingresa el pais o capital")
-    search_entry.configure(state=DISABLED)
-    search_entry.bind("<Button-1>", on_click)
 
-    # Boton de busqueda
+# Entrada de buscador
 
-    boton = Button(root, text="Buscar", command=lambda: search(search_entry.get()), font=("Bahnschrift"),
-                   state=DISABLED)
-    boton.grid(row=4, column=0, pady=10)
+search_entry = Entry(frame_search, bd=3, font=("Bahnschrift"), relief=FLAT, borderwidth=4, justify=CENTER, fg="#5D6D7E",
+                     highlightthickness=2)
+search_entry.grid(row=3, column=0, pady=10, padx=35, ipadx=20, ipady=4)
+search_entry.insert(0, "Ingresa el pais o capital")
+search_entry.configure(state=DISABLED)
+search_entry.config(highlightbackground="#ABEBC6", highlightcolor="#ABEBC6")
+search_entry.bind("<Button-1>", on_click)
 
-    root.mainloop()
+# Boton de busqueda
+
+boton = Button(frame_search, text="Buscar", command=lambda: search(search_entry.get()), font=("Bahnschrift"),
+               state=DISABLED, bg="#FF7272", fg="white", relief=FLAT)
+boton.grid(row=4, column=0, pady=10)
+
+root.mainloop()

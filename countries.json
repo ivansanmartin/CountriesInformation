@@ -66,9 +66,9 @@
             {
                 "countryCode": "AQ",
                 "countryName": "Antarctica",
-                "currencyCode": "",
+                "currencyCode": "N/A",
                 "population": "0",
-                "capital": "",
+                "capital": "N/A",
                 "continentName": "Antarctica"
             },
             {
@@ -244,7 +244,7 @@
                 "countryName": "Brazil",
                 "currencyCode": "BRL",
                 "population": "201103330",
-                "capital": "Brasília",
+                "capital": "Brasilia",
                 "continentName": "South America"
             },
             {
@@ -268,7 +268,7 @@
                 "countryName": "Bouvet Island",
                 "currencyCode": "NOK",
                 "population": "0",
-                "capital": "",
+                "capital": "N/A",
                 "continentName": "Antarctica"
             },
             {
@@ -764,7 +764,7 @@
                 "countryName": "Heard Island and McDonald Islands",
                 "currencyCode": "AUD",
                 "population": "0",
-                "capital": "",
+                "capital": "N/A",
                 "continentName": "Antarctica"
             },
             {
@@ -820,7 +820,7 @@
                 "countryName": "Israel",
                 "currencyCode": "ILS",
                 "population": "7353985",
-                "capital": "",
+                "capital": "N/A",
                 "continentName": "Asia"
             },
             {
@@ -844,7 +844,7 @@
                 "countryName": "British Indian Ocean Territory",
                 "currencyCode": "USD",
                 "population": "4000",
-                "capital": "",
+                "capital": "N/A",
                 "continentName": "Asia"
             },
             {
@@ -1460,7 +1460,7 @@
                 "countryName": "Palestine",
                 "currencyCode": "ILS",
                 "population": "3800000",
-                "capital": "",
+                "capital": "N/A",
                 "continentName": "Asia"
             },
             {
@@ -1756,7 +1756,7 @@
                 "countryName": "Tokelau",
                 "currencyCode": "NZD",
                 "population": "1466",
-                "capital": "",
+                "capital": "N/A",
                 "continentName": "Oceania"
             },
             {
@@ -1852,7 +1852,7 @@
                 "countryName": "U.S. Minor Outlying Islands",
                 "currencyCode": "USD",
                 "population": "0",
-                "capital": "",
+                "capital": "N/A",
                 "continentName": "Oceania"
             },
             {
