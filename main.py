@@ -47,7 +47,7 @@ def search(entry):
             all_info.append(i["countryName"])
 
     if entry not in pais and entry not in capital:
-        messagebox.showerror("Error", "El pais o capital ingresado no existe.")
+        messagebox.showerror("Error", "El pais o capital ingresado no existe. \n\nEj: Chile, ej2: Santiago (No olvidar )")
 
     elif entry in pais or entry in capital:
         print(all_info)
@@ -84,7 +84,7 @@ def search(entry):
         population_label.grid(row=9, column=0, sticky=W)
 
         # POBLACION
-        total_population = Label(frame, text=all_info[0], font=("Bahnschrift 13 italic bold"), fg="#FEF9E7",
+        total_population = Label(frame, text=f"{all_info[0]} +", font=("Bahnschrift 13 italic bold"), fg="#FEF9E7",
                                  bg=bg_global)
         total_population.grid(row=9, column=1)
 
@@ -94,9 +94,9 @@ def search(entry):
         continente_label.grid(row=10, column=0, sticky=W)
 
         # CONTINENTE
-        total_population = Label(frame, text=all_info[1], font=("Bahnschrift 13 italic bold"), fg="#FEF9E7",
+        get_continente = Label(frame, text=all_info[1], font=("Bahnschrift 13 italic bold"), fg="#FEF9E7",
                                  bg=bg_global)
-        total_population.grid(row=10, column=1)
+        get_continente .grid(row=10, column=1)
 
         # Etiqueta codigo de moneda
         moneda_label = Label(frame, text="Codigo de monenda: ", font=("Bahnschrift 13 italic bold"), bg=bg_global,
@@ -104,19 +104,19 @@ def search(entry):
         moneda_label.grid(row=11, column=0, sticky=W)
 
         # TIPO MONEDA
-        total_population = Label(frame, text=all_info[2], font=("Bahnschrift 13 italic bold"), fg="#FEF9E7",
+        get_moneda = Label(frame, text=all_info[2], font=("Bahnschrift 13 italic bold"), fg="#FEF9E7",
                                  bg=bg_global)
-        total_population.grid(row=11, column=1)
+        get_moneda.grid(row=11, column=1)
 
         # Etiqueta codigo de pais
-        moneda_label = Label(frame, text="Codigo de pais: ", font=("Bahnschrift 13 italic bold"), bg=bg_global,
+        cod_label = Label(frame, text="Codigo de pais: ", font=("Bahnschrift 13 italic bold"), bg=bg_global,
                              fg="#ABEBC6")
-        moneda_label.grid(row=12, column=0, sticky=W)
+        cod_label .grid(row=12, column=0, sticky=W)
 
         # CODIGO DE PAIS
-        total_population = Label(frame, text=all_info[3], font=("Bahnschrift 13 italic bold"), fg="#FEF9E7",
+        get_cod = Label(frame, text=all_info[3], font=("Bahnschrift 13 italic bold"), fg="#FEF9E7",
                                  bg=bg_global)
-        total_population.grid(row=12, column=1)
+        get_cod.grid(row=12, column=1)
 
 
 bg_global = "#34495E"
@@ -124,6 +124,7 @@ bg_global = "#34495E"
 root = Tk()
 root.geometry("585x300")
 root.config(bg=bg_global)
+root.title("COUNTRY INFORMATION")
 root.resizable(False, False)
 root.eval('tk::PlaceWindow . center')
 
