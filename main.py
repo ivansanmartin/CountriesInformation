@@ -24,7 +24,7 @@ def search(entry):
     # Obtener datos de json.
 
     if len(entry) == 0:
-        messagebox.showwarning("Advertencia", "Existen campos nulos. \n\nIngresa pais o una capital.")
+        messagebox.showwarning("Advertencia", "Existen campos nulos. \n\nIngresa un pais o capital. \n\nEj: Chile")
         return
 
     # Info country
@@ -47,11 +47,11 @@ def search(entry):
             all_info.append(i["countryName"])
 
     if entry not in pais and entry not in capital:
-        messagebox.showerror("Error", "El pais o capital ingresado no existe. \n\nEj: Chile, ej2: Santiago (No olvidar )")
+        messagebox.showerror("Error", "El pais o capital ingresado no existe. \n\nEj: Chile, ej2: Santiago \n\nNo olvidar primera letra mayuscula.")
 
     elif entry in pais or entry in capital:
         print(all_info)
-        root.geometry("585x370")
+        root.geometry("585x390")
         sucess = Label(root, text=f"INFORMACION DE \"{entry.upper()}\'", font=("Bahnschrift 11 italic bold"), bg="#FCF3CF", fg="#5D6D7E")
         sucess.grid(row=5, column=0, sticky=W+E)
         frame = LabelFrame(root, font=("Bahnschrift 15 italic bold"), bg=bg_global,
